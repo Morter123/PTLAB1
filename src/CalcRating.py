@@ -2,18 +2,21 @@
 from Types import DataType
 import pytest
 
-RatingsType = dict[str, float]
-
 
 class CalcRating:
     def __init__(self, data: DataType) -> None:
         self.data: DataType = data
-        self.rating: RatingsType = {}
 
-    def calc(self) -> RatingsType:
-        for key in self.data:
-            self.rating[key] = 0.0
-            for subject in self.data[key]:
-                self.rating[key] += subject[1]
-            self.rating[key] /= len(self.data[key])
-        return self.rating
+    def find_students_with_perfect_scores(self) -> list:
+        """
+        Находит студентов, у которых все оценки равны 100.
+        Возвращает список имен таких студентов.
+        """
+        perfect_students = []
+
+        for name, subjects in self.data.items():
+            # Проверяем, что все оценки равны 100
+            if all(score >= 100 for _, score in subjects):
+                perfect_students.append(name)
+
+        return perfect_students
