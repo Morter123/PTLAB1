@@ -56,4 +56,10 @@
 
 **Формат XML**
 
+**Скриншоты хода выполнения:**
+**Вывод студента со 100 баллами**
+![image](https://github.com/user-attachments/assets/c3c6ef19-2088-4a94-ba35-6be4803341f2)
+**Вывод тестов**
+![image](https://github.com/user-attachments/assets/a3b7193e-cf7b-4fab-bbba-1991240f3b0f)
 
+## UML-Диаграмма
