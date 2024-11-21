@@ -3,9 +3,8 @@ import pytest
 
 from main import get_path_from_arguments
 
+
 @pytest.fixture()
-
-
 def correct_arguments_string() -> tuple[list[str], str]:
     return ["-p", "/home/user/file.txt"], "/home/user/file.txt"
 

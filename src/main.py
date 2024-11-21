@@ -5,7 +5,9 @@ from XMLDataReader import XMLDataReader
 from CalcRating import CalcRating
 import random
 
+
 def get_path_from_arguments(args) -> str:
+
     parser = argparse.ArgumentParser(description="Path to datafile")
     parser.add_argument("-p", dest="path", type=str, required=True,
                         help="Path to datafile")
@@ -14,6 +16,7 @@ def get_path_from_arguments(args) -> str:
 
 
 def main():
+
     path = get_path_from_arguments(sys.argv[1:])
     reader = XMLDataReader()
     students = reader.read(path)

@@ -4,11 +4,11 @@ from DataReader import DataReader
 
 
 class TextDataReader(DataReader):
-    
+
     def __init__(self) -> None:
         self.key: str = ""
         self.students: DataType = {}
-        
+
     def read(self, path: str) -> DataType:
         with open(path, encoding='utf-8') as file:
             for line in file:

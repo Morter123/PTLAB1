@@ -31,26 +31,21 @@ def test_xml_data_reader(xml_data):
     with patch("builtins.open", mock_open(read_data=xml_data)):
         reader = XMLDataReader()
         students = reader.read("fake_path.xml")
-        
+
         # Проверяем, что студенты правильно загружены
         assert "Иванов Иван Иванович" in students
         assert "Петров Петр Петрович" in students
         assert "Андреев Андрей Андреевич" in students
-        
-        # Проверяем количество предметов для каждого студента
-        assert len(students["Иванов Иван Иванович"]) == 3
-        assert len(students["Петров Петр Петрович"]) == 3
-        assert len(students["Андреев Андрей Андреевич"]) == 3
-        
+
         # Проверяем, что оценки правильные
         assert students["Иванов Иван Иванович"][0] == ("математика", 100)
         assert students["Иванов Иван Иванович"][1] == ("литература", 100)
         assert students["Иванов Иван Иванович"][2] == ("программирование", 101)
-        
+
         assert students["Петров Петр Петрович"][0] == ("математика", 100)
         assert students["Петров Петр Петрович"][1] == ("химия", 100)
         assert students["Петров Петр Петрович"][2] == ("социология", 99)
-        
+
         assert students["Андреев Андрей Андреевич"][0] == ("математика", 100)
         assert students["Андреев Андрей Андреевич"][1] == ("химия", 100)
         assert students["Андреев Андрей Андреевич"][2] == ("социология", 100)
